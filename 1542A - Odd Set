@@ -1,0 +1,6 @@
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    odd_count = sum(1 for x in a if x % 2 == 1)
+    print("Yes" if odd_count == n else "No")
