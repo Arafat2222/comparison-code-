@@ -1,0 +1,20 @@
+import sys
+import math
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+limit = 10**6
+primes = set(i for i in range(2, limit + 1) if is_prime(i))
+t_primes = {p * p for p in primes}
+
+n = int(sys.stdin.readline())
+numbers = map(int, sys.stdin.readline().split())
+
+for x in numbers:
+    print("YES" if x in t_primes else "NO")
